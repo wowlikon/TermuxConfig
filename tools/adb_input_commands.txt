@@ -1,0 +1,4 @@
+adb shell input tap 500 1450
+adb shell input swipe 100 500 100 1450 100
+adb shell input text "insert%syour%stext%shere"
+adb shell input swipe 100 500 100 500 250
