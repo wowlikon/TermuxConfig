@@ -126,7 +126,7 @@ install_ohmyzsh() {
 
 finish_install() {
 	pip install -r ./modules.txt
-	sed -i -e 's/# geometry=.*/geometry=1366x768/g' $HOME/.vnc/config
+	sed -i -e 's/# geometry=.*/geometry=1920x1080/g' $HOME/.vnc/config
 	clear
 
 	# Set motd
@@ -169,5 +169,4 @@ echo -e "${red}Invalid choice!${nocol}"
 echo ""
 cd ..
 
-# TODO custom tools
-chmod +x ./tools/
+chmod +x ./tools/*
