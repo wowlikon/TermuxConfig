@@ -72,11 +72,6 @@ install_desktop() {
 }
 
 configure_termux() {
-	# Set motd
-	echo -e "${green}Set motd banner text: ${nocol}"
-	read -p "" -r motd
-	echo "" # For newline
-	sed -i 's/Termux/${motd}' ~/MyTermuxConfig/Termux/motd.sh
 	echo -e "${green}Configuring termux ...${nocol}"
 	rm -rf "${HOME}/.termux"
 	cp -r Termux "${HOME}/.termux"
@@ -131,7 +126,14 @@ install_ohmyzsh() {
 
 finish_install() {
 	pip install -r ./modules.txt
+	sed -i -e 's/# geometry=.*/geometry=1366x768/g' $HOME/.vnc/config
 	clear
+
+	# Set motd
+	echo -e "${green}Set motd banner text: ${nocol}"
+	read -p "" -r motd
+	echo "" # For newline
+	sed -i 's/Termux/${motd}' ~/.termux/motd.sh
 
 	# Set password
 	echo -e "${green}Set you're password: ${nocol}"
