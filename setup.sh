@@ -133,7 +133,7 @@ finish_install() {
 	echo -e "${green}Set motd banner text: ${nocol}"
 	read -p "" -r motd
 	echo "" # For newline
-	sed -i 's/Termux/${motd}' ~/.termux/motd.sh
+	sed -i 's/Termux/${motd}/g' ~/.termux/motd.sh
 
 	# Set password
 	echo -e "${green}Set you're password: ${nocol}"
